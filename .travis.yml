@@ -1,0 +1,11 @@
+sudo: false
+dist: xenial
+
+services:
+  - docker
+
+install:
+  - docker build -t basler/hucon-openwrt .
+
+script:
+  - docker run basler/hucon-openwrt

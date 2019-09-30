@@ -31,5 +31,7 @@ ENV FORCE_UNSAFE_CONFIGURE 1
 COPY . /root/source
 WORKDIR /root/source
 
-RUN sh scripts/onion-feed-setup.sh && python scripts/onion-setup-build.py
+RUN echo $(ls -al /root/source)
+RUN chmod +x /root/source/run.sh
 
+ENTRYPOINT ["/root/source/run.sh"]
